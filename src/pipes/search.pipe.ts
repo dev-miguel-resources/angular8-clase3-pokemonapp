@@ -13,7 +13,7 @@ export class SearchPipe implements PipeTransform {
     if (!searchText) {
       return value; //si no se ha buscado nada mantenga el value de alguna buscada pasada
     }
-    searchText = searchText.toLowerCase(); //el texto será inicializado en minuscula
+    searchText = searchText.toLowerCase(); //el texto buscado siempre se interpreta en minuscula
 
     return value.filter(item => { //le aplico por medio de filter, ciertas condiciones al value que el item será encargado de manipular 
       let matchFound = false; //deshabilitado mientras no busque
@@ -26,7 +26,7 @@ export class SearchPipe implements PipeTransform {
         const searchId = JSON.stringify(index).toLowerCase().includes(searchText);
         //si busco por nombre o id
         if (searchName || searchId) {
-          matchFound = true; //habilito la variable de match
+          matchFound = true; //encontro match por id o nombre
         }
       }
       return matchFound; //retorno su valor

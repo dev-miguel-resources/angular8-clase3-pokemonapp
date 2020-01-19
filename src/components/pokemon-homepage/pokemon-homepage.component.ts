@@ -93,7 +93,7 @@ export class PokemonHomepageComponent implements OnInit {
       .subscribe((species: any) => {
         const entries = species.flavor_text_entries;
         if (entries) {
-          entries.some(flavor => {
+          entries.some(flavor => { //escucha data respecto al lenguaje
             if (flavor.language.name === 'en') {
               pokemon.description = flavor.flavor_text;
             }

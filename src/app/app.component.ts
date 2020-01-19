@@ -6,7 +6,7 @@ import { Results } from './../interfaces';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-//Componente encargado de reflejar nuevos cambios
+
 export class AppComponent {
   public search: string;
   public typeFilter: string;
